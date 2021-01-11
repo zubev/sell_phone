@@ -1,0 +1,38 @@
+#navigation {
+    text-align: center;
+    /*background-color: #000000;*/
+    background-color: black;
+}
+
+#navigation a {
+    background-position: center center;
+    background-origin: content-box;
+    background-size: cover;
+    /*width: 3.14286em;*/
+    max-width: 74.8px;
+    font-size: 14px;
+    line-height: 3.14286;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    color: #f5f5f7;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 0 10px;
+    height: 44px;
+    opacity: .8;
+    background: no-repeat;
+    text-decoration: none;
+    white-space: nowrap
+}
+#navigation ul{
+    display: inline-flex;
+
+}
+#navigation li{
+    margin-left: 75px;
+}
+#navigation a:hover{
+    color: white;
+}

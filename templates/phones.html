@@ -1,0 +1,20 @@
+{% extends 'shared/base.html' %}
+{% block site_body %}
+
+    {% if not phones %}
+        <h1>No Phones</h1>
+        {% else %}
+        <h1>Phones</h1>
+    {% endif %}
+    {% for phone in phones %}
+        <div class="phone">
+            <img class="phone_picture" src="{{ phone.picture.url }}" width="450px">
+        <h3>{{ phone.brand }} {{ phone.price }}$</h3>
+            <a class="btn btn-info" href="{% url 'details phone' phone.id %}">Details</a>
+            {% if phone.owner.user == user or user.is_superuser %}
+                <a class="btn btn-outline-primary" href="{% url 'edit phone' phone.id %}">Edit</a>
+                <a class="btn btn-danger" href="{% url 'delete phone' phone.id %}">Delete</a>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endblock %}

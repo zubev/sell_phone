@@ -1,0 +1,14 @@
+{% extends 'shared/base.html' %}
+{% block site_body %}
+    <h1>Delete phone</h1>
+     <form method="POST" action="{% url 'delete phone' phone.id %}">
+        {% csrf_token %}
+        <h2>
+            Are you sure you want to delete your phone
+        </h2>
+         <img src="{{ phone.picture.url }}" width="150px">
+         {{ phone.brand }}
+        <button class="btn btn-danger">Delete</button>
+        <a class="btn btn-info" href="{% url 'phones' %}">Back to phones</a>
+     </form>
+{% endblock %}

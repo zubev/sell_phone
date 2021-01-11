@@ -1,0 +1,18 @@
+{% extends 'shared/base.html' %}
+{% block site_body %}
+    <article id="details">
+        <img id="details_picture" src="{{ phone.picture.url }}" alt="Phone of {{ phone.owner.user.username }}"
+             width="600px">
+
+        <h4>{{ phone.brand }} {{ phone.price }}$</h4>
+
+        <h5>Added by: {{ phone.owner.user.username }}</h5>
+        <h5>Capacity: {{ phone.capacity }} GB</h5>
+        <h5>Condition: {{ phone.condition }}</h5>
+        <h5>Description: {{ phone.description }}</h5>
+        {% if phone.owner.user == user or user.is_superuser %}
+            <a class="btn btn-outline-primary" href="{% url 'edit phone' phone.id %}">Edit</a>
+            <a class="btn btn-danger" href="{% url 'delete phone' phone.id %}">Delete</a>
+        {% endif %}
+    </article>
+{% endblock %}

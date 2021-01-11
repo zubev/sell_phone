@@ -1,0 +1,16 @@
+{% extends 'shared/base.html' %}
+{% block site_body %}
+    <h1>
+        This is your profile
+    </h1>
+    {% if phones %}
+        <h2>Your Phones:</h2>
+        {% for phone in phones %}
+            <img src="{{ phone.picture.url }}" width="355px">
+            {{ phone.brand }}
+            <a class="btn btn-info" href="{% url 'details phone' phone.pk %} ">Details</a>
+        {% endfor %}
+    {% else %}
+        <h2>No Phones</h2>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'shared/base.html' %}
+{% block site_body %}
+    <div class="my-form">
+    <form method="post" action="{% url 'add phone' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+            {{ form }}
+
+            <button class="btn btn-dark">Submit</button>
+
+    </form>
+    </div>
+{% endblock %}

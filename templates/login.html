@@ -1,0 +1,13 @@
+{% extends 'shared/base.html' %}
+{% block site_body %}
+    <div class="my-form">
+        <form method="post">
+            <h2>Login</h2>
+            {% csrf_token %}
+            {{ form }}
+            <button class="btn btn-primary">Login</button>
+            or
+            <a class="btn btn-outline-primary" href="{% url 'register user' %}">Register</a>
+        </form>
+    </div>
+{% endblock %}

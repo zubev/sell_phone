@@ -1,0 +1,11 @@
+{% extends 'shared/base.html' %}
+{% block site_body %}
+    <div class="my-form">
+    <form method="post" action="{% url 'edit phone' phone.id%}">
+    <img class="phone_picture"src="{{ phone.picture.url }}">
+    {{ form }}
+        {% csrf_token %}
+    <button>Change</button>
+    </form>
+    </div>
+{% endblock %}
